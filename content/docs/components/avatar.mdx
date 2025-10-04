@@ -1,0 +1,88 @@
+---
+title: Avatar
+description: An easily stylable avatar component.
+links:
+  docs: https://base-ui.com/react/components/avatar
+  api: https://base-ui.com/react/components/avatar#api-reference
+---
+
+<ComponentPreview name="avatar-demo" />
+
+## Installation
+
+<CodeBlockCommand component="avatar" />
+
+---
+
+## Examples
+
+### Default
+
+<ComponentPreview name="avatar-default" />
+
+### Initials
+
+<ComponentPreview name="avatar-initials" />
+
+### Fallback
+
+<ComponentPreview name="avatar-fallback" />
+
+### Size
+
+<ComponentPreview name="avatar-size" />
+
+### Shape
+
+<ComponentPreview name="avatar-shape" />
+
+### Ring
+
+<ComponentPreview name="avatar-ring" />
+
+### Status
+
+<ComponentPreview name="avatar-status" />
+
+### Badge
+
+<ComponentPreview name="avatar-badge" />
+
+### Group
+
+<ComponentPreview name="avatar-group" />
+
+## Migrating from Radix UI
+
+<Steps>
+  <Step>
+    <include>migration-steps/common.mdx</include>
+  </Step>
+  <Step>
+    ### AvatarFallback Delay
+
+    In Radix UI, you can provide a `delayMs` prop to delay its rendering so it only renders for those with slower connections.
+
+    ```tsx
+    import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+
+    <Avatar>
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      // [!code highlight]
+      <AvatarFallback delayMs={1000}>CN</AvatarFallback>
+    </Avatar>
+    ```
+
+    With Base UI, you can pass the `delay` prop to achieve the same effect.
+
+    ```tsx
+    import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+    
+    <Avatar>
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      // [!code highlight]
+      <AvatarFallback delay={1000}>CN</AvatarFallback>
+    </Avatar>
+    ```
+  </Step>
+</Steps>

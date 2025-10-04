@@ -10,12 +10,10 @@ pnpm-debug.log*
 # Environment variables
 .env
 .dev.vars
+.env*.local
 
 # Vite build output
 dist
-
-# TypeScript
-*.tsbuildinfo
 
 # IDEs and editors
 .vscode/
@@ -65,3 +63,21 @@ coverage
 
 # Wrangler
 .wrangler
+
+# generated content
+.contentlayer
+.content-collections
+.source
+
+# test & build
+/coverage
+/.next/
+/out/
+/build
+*.tsbuildinfo
+
+# misc
+*.pem
+/.pnp
+.pnp.js
+npm-debug.log*

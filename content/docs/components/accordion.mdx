@@ -1,0 +1,78 @@
+---
+title: Accordion
+description: A set of collapsible panels with headings.
+links:
+  docs: https://ui.shadcn.com/docs/components/accordion
+  api: https://ui.shadcn.com/docs/components/accordion#api-reference
+---
+
+<ComponentPreview name="accordion-demo" />
+
+## Installation
+
+<CodeBlockCommand component="accordion" />
+
+---
+
+## Examples
+
+### Tabs
+
+<ComponentPreview name="accordion-tabs" />
+
+### With Icon
+
+<ComponentPreview name="accordion-with-icon" />
+
+### With Plus Minus Indicator
+
+<ComponentPreview name="accordion-plus-minus-indicator" />
+
+### Multiple Items Open
+
+<ComponentPreview name="accordion-multiple-items-open" />
+
+## Migrating from Radix UI
+
+<Steps>
+  <Step>
+    <include>migration-steps/common.mdx</include>
+  </Step>
+  <Step>
+    ### Accordion Type
+
+    In Radix UI, you can pass the `type` prop to the `Accordion` component to change the accordion type to either `single` or `multiple`.
+
+    ```tsx
+    import { Accordion, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
+    // [!code highlight]
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionContent>
+          Yes. It adheres to the WAI-ARIA design pattern.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+
+    With Base UI, you can pass the boolean `openMultiple` prop to the `Accordion` component to control the accordion type. When `openMultiple` is `true`, the accordion behaves as type `multiple`; when `false`, it behaves as type `single`.
+    
+    The default value for `openMultiple` is `true`.
+
+  ```tsx
+  import { Accordion, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
+  // [!code highlight]
+  <Accordion openMultiple={false}> // Same as type="single"
+    <AccordionItem value="item-1">
+      <AccordionTrigger>Is it accessible?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It adheres to the WAI-ARIA design pattern.
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+  ```
+  </Step>
+</Steps>

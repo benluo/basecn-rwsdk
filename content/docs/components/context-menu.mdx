@@ -1,0 +1,57 @@
+---
+title: Context Menu
+description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+links:
+  docs: https://base-ui.com/react/components/context-menu
+  api: https://base-ui.com/react/components/context-menu#api-reference
+---
+
+<ComponentPreview name="context-menu-demo" />
+
+## Installation
+
+<CodeBlockCommand component="context-menu" />
+
+## Migrating from Radix UI
+
+<Steps>
+  <Step>
+    <include>migration-steps/common.mdx</include>
+  </Step>
+  <Step>
+    ### Listening to Item Clicks
+
+    In Radix UI, you can listen to item clicks by passing a function to the `onSelect` prop.
+
+    ```tsx
+    <ContextMenu>
+      <ContextMenuTrigger>...</ContextMenuTrigger>
+      
+      <ContextMenuContent>
+        // [!code highlight]
+        <ContextMenuItem inset onSelect={() => { console.log("Back") }}>
+          Back
+        </ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+    ```
+
+    In Base UI, you can do the same by passing a function to the `onClick` prop.
+
+    ```tsx
+    <ContextMenu>
+      <ContextMenuTrigger>...</ContextMenuTrigger>
+      
+
+      <ContextMenuPositioner>
+        <ContextMenuContent>
+          // [!code highlight]
+          <ContextMenuItem inset onClick={() => { console.log("Back") }}>
+            Back
+          </ContextMenuItem>
+        </ContextMenuContent>
+      </ContextMenuPositioner>
+    </ContextMenu>
+    ```
+  </Step>
+</Steps>
